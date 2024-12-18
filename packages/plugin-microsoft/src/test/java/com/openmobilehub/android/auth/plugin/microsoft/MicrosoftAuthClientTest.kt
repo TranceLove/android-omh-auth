@@ -65,7 +65,7 @@ class MicrosoftAuthClientTest {
         every {
             appMock.getApplication()
         } throws OmhAuthException.NotInitializedException()
-        coEvery { appMock.initialize(any(), any()) } returns mockk()
+        coEvery { appMock.initialize(any(), any<Int>()) } returns mockk()
 
         val client = MicrosoftAuthClient(
             configFileResourceId = configFileResourceId,
@@ -75,7 +75,7 @@ class MicrosoftAuthClientTest {
 
         client.initialize().addOnSuccess(callbackMock).execute()
 
-        coVerify { appMock.initialize(any(), any()) }
+        coVerify { appMock.initialize(any(), any<Int>()) }
         coVerify { callbackMock.onSuccess(Unit) }
     }
 

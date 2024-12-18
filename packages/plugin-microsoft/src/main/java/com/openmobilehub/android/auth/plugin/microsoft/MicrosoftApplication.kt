@@ -3,9 +3,12 @@ package com.openmobilehub.android.auth.plugin.microsoft
 import android.content.Context
 import com.microsoft.identity.client.ISingleAccountPublicClientApplication
 import com.microsoft.identity.client.PublicClientApplication
+import com.microsoft.identity.client.PublicClientApplicationConfiguration
 import com.openmobilehub.android.auth.core.models.OmhAuthException
+import com.openmobilehub.android.auth.plugin.microsoft.utils.PublicClientApplicationConfigurationLoader
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import java.io.InputStream
 
 class MicrosoftApplication {
     private var application: ISingleAccountPublicClientApplication? = null
@@ -16,6 +19,21 @@ class MicrosoftApplication {
         }
 
         return application!!
+    }
+
+    suspend fun initialize(context: Context, source: InputStream) {
+        withContext(Dispatchers.IO) {
+            val config = PublicClientApplicationConfigurationLoader
+                .createSingleAccountPublicClientApplication(context, source)
+            val createSingleAccountPublicClientApplication = PublicClientApplication::class.java
+                .getDeclaredMethod(
+                    "createSingleAccountPublicClientApplication",
+                    PublicClientApplicationConfiguration::class.java
+                )
+            createSingleAccountPublicClientApplication.isAccessible = true
+            application = createSingleAccountPublicClientApplication
+                .invoke(null, config) as ISingleAccountPublicClientApplication
+        }
     }
 
     suspend fun initialize(context: Context, configFileResourceId: Int) {
