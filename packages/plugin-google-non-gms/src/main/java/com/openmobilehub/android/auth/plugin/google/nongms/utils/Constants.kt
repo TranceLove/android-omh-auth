@@ -33,7 +33,5 @@ object Constants {
     const val SURNAME_KEY = "family_name"
     const val PICTURE_KEY = "picture"
     const val ID_KEY = "id"
-    const val CAUSE_KEY = "cause"
-    const val ERROR_MESSAGE_KEY = "errorMessage"
     const val GOOGLE_ID_TOKEN_KEY = "googleIdToken"
 }

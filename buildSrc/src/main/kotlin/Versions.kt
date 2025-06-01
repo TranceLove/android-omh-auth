@@ -67,7 +67,8 @@ object Versions {
 
     // Testing
     const val junit = "4.13.2"
-    const val androidJunit = "1.1.5"
+    const val androidJunit = "1.2.1"
+    const val androidXTestRunner = "1.5.0"
     const val espresso = "3.5.1"
     const val mockk = "1.13.4"
     const val testJson = "20231013"

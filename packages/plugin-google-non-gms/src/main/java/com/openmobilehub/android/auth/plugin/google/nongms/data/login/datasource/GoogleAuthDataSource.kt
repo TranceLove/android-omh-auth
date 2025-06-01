@@ -22,15 +22,16 @@ import androidx.core.content.edit
 import androidx.core.net.toUri
 import com.openmobilehub.android.auth.plugin.google.nongms.data.login.GoogleAuthREST
 import com.openmobilehub.android.auth.plugin.google.nongms.data.login.models.AuthTokenResponse
-import com.openmobilehub.android.auth.plugin.google.nongms.domain.models.ApiResult
 import com.openmobilehub.android.auth.plugin.google.nongms.utils.Constants
+import com.openmobilehub.android.auth.plugin.common.mobileweb.data.login.datasource.AuthDataSource
+import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.models.ApiResult
 
 internal class GoogleAuthDataSource(
     private val authService: GoogleAuthREST,
     private val sharedPreferences: SharedPreferences
-) : AuthDataSource {
+) : AuthDataSource<AuthTokenResponse> {
 
-    override suspend fun getToken(
+    override suspend fun requestToken(
         clientId: String,
         authCode: String,
         redirectUri: String,

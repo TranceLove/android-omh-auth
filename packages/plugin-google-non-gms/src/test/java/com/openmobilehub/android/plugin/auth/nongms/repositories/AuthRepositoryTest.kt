@@ -18,11 +18,11 @@ package com.openmobilehub.android.plugin.auth.nongms.repositories
 
 import android.net.Uri
 import com.openmobilehub.android.auth.plugin.google.nongms.data.login.AuthRepositoryImpl
-import com.openmobilehub.android.auth.plugin.google.nongms.data.login.datasource.AuthDataSource
+import com.openmobilehub.android.auth.plugin.common.mobileweb.data.login.datasource.AuthDataSource
 import com.openmobilehub.android.auth.plugin.google.nongms.data.login.models.AuthTokenResponse
-import com.openmobilehub.android.auth.plugin.google.nongms.domain.auth.AuthRepository
-import com.openmobilehub.android.auth.plugin.google.nongms.domain.models.ApiResult
-import com.openmobilehub.android.auth.plugin.google.nongms.domain.models.OAuthTokens
+import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.auth.AuthRepository
+import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.models.ApiResult
+import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.models.OAuthTokens
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.every
@@ -38,7 +38,7 @@ import org.junit.Test
 @OptIn(ExperimentalCoroutinesApi::class)
 internal class AuthRepositoryTest {
 
-    private val googleAuthDataSource = mockk<AuthDataSource>() {
+    private val googleAuthDataSource = mockk<AuthDataSource<AuthTokenResponse>>() {
         every { storeToken(any(), any()) } returns Unit
     }
 
@@ -67,7 +67,7 @@ internal class AuthRepositoryTest {
             )
 
             coEvery {
-                googleAuthDataSource.getToken(
+                googleAuthDataSource.requestToken(
                     clientId = any(),
                     authCode = any(),
                     redirectUri = any(),

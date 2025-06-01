@@ -8,7 +8,7 @@ val useLocalProjects = project.rootProject.extra["useLocalProjects"] as Boolean
 plugins {
     `android-application`
     id("kotlin-kapt")
-    id("com.google.dagger.hilt.android") version "2.44" apply true
+    id("com.google.dagger.hilt.android") version "2.48" apply true
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
@@ -100,10 +100,15 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
+
     kapt {
         correctErrorTypes = true
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 }
 dependencies {
@@ -123,8 +128,8 @@ dependencies {
     implementation("androidx.datastore:datastore-preferences:1.0.0")
 
     // Hilt
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-compiler:2.44")
+    implementation("com.google.dagger:hilt-android:2.48")
+    kapt("com.google.dagger:hilt-compiler:2.48")
 
     testImplementation(Libs.junit)
     androidTestImplementation(Libs.androidJunit)
@@ -136,7 +141,9 @@ dependencies {
         implementation(project(":packages:plugin-google-non-gms"))
         implementation(project(":packages:plugin-facebook"))
         implementation(project(":packages:plugin-microsoft"))
+        implementation(project(":packages:plugin-microsoft-mobileweb"))
         implementation(project(":packages:plugin-dropbox"))
+        implementation(project(":packages:plugin-dropbox-mobileweb"))
     } else {
         implementation(Libs.omhGoogleGms)
         implementation(Libs.omhGoogleNonGms)
@@ -147,12 +154,12 @@ dependencies {
 }
 
 fun getValueFromEnvOrProperties(name: String): Any? {
-    val localProperties = gradleLocalProperties(file("."))
+    val localProperties = gradleLocalProperties(file("."), project.providers)
     return System.getenv(name) ?: localProperties[name]
 }
 
 fun getValueFromProperties(name: String): String {
-    val properties = gradleLocalProperties(rootDir)
+    val properties = gradleLocalProperties(rootDir, project.providers)
     val property = properties[name] as? String
     return property
         ?: throw GradleException("Missing property $name, please add it to the local.properties file")

@@ -83,7 +83,8 @@ object Libs {
 
     // Testing
     val junit by lazy { "junit:junit:${Versions.junit}" }
-    val androidJunit by lazy { "androidx.test.ext:junit:${Versions.androidJunit}" }
+    val androidJunit by lazy { "androidx.test.ext:junit-ktx:${Versions.androidJunit}" }
+    val androidXTestRunner by lazy { "androidx.test:runner:${Versions.androidXTestRunner}" }
     val esspreso by lazy { "androidx.test.espresso:espresso-core:${Versions.espresso}" }
     val mockk by lazy { "io.mockk:mockk:${Versions.mockk}" }
     val robolectric by lazy { "org.robolectric:robolectric:${Versions.robolectric}" }

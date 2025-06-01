@@ -25,9 +25,11 @@ import com.openmobilehub.android.auth.core.models.OmhAuthException
 import com.openmobilehub.android.auth.core.models.OmhUserProfile
 import com.openmobilehub.android.auth.plugin.google.nongms.data.login.AuthRepositoryImpl
 import com.openmobilehub.android.auth.plugin.google.nongms.data.user.UserRepositoryImpl
-import com.openmobilehub.android.auth.plugin.google.nongms.domain.auth.AuthUseCase
-import com.openmobilehub.android.auth.plugin.google.nongms.domain.models.ApiResult
-import com.openmobilehub.android.auth.plugin.google.nongms.domain.user.ProfileUseCase
+import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.auth.AuthUseCase
+import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.models.ApiResult
+import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.user.ProfileUseCase
+import com.openmobilehub.android.auth.plugin.common.mobileweb.presentation.redirect.RedirectActivity.Companion.CLIENT_ID
+import com.openmobilehub.android.auth.plugin.common.mobileweb.presentation.redirect.RedirectActivity.Companion.SCOPES
 import com.openmobilehub.android.auth.plugin.google.nongms.presentation.redirect.RedirectActivity
 
 /**
@@ -40,11 +42,7 @@ internal class OmhAuthClientImpl(
     context: Context
 ) : OmhAuthClient {
 
-    private val applicationContext: Context
-
-    init {
-        applicationContext = context.applicationContext
-    }
+    private val applicationContext: Context = context.applicationContext
 
     override fun initialize(): OmhTask<Unit> {
         return OmhTask({
@@ -54,8 +52,8 @@ internal class OmhAuthClientImpl(
 
     override fun getLoginIntent(): Intent {
         return Intent(applicationContext, RedirectActivity::class.java)
-            .putExtra(RedirectActivity.CLIENT_ID, clientId)
-            .putExtra(RedirectActivity.SCOPES, scopes)
+            .putExtra(CLIENT_ID, clientId)
+            .putExtra(SCOPES, scopes)
     }
 
     override fun getUser(): OmhTask<OmhUserProfile> {
@@ -64,12 +62,9 @@ internal class OmhAuthClientImpl(
 
         return OmhTask({
             val profileData = profileUseCase.getProfileData()
-
-            if (profileData == null) {
-                throw OmhAuthException.UnrecoverableLoginException(
+                ?: throw OmhAuthException.UnrecoverableLoginException(
                     cause = Throwable(message = "No user profile stored")
                 )
-            }
 
             return@OmhTask profileData
         })

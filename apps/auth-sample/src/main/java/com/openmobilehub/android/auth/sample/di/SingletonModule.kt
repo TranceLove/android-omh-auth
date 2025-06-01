@@ -20,9 +20,11 @@ import android.content.Context
 import com.openmobilehub.android.auth.core.OmhAuthClient
 import com.openmobilehub.android.auth.core.OmhAuthProvider
 import com.openmobilehub.android.auth.plugin.dropbox.DropboxAuthClient
+import com.openmobilehub.android.auth.plugin.dropbox.mobileweb.presentation.DropboxMobileWebAuthClient
 import com.openmobilehub.android.auth.plugin.facebook.FacebookAuthClient
 import com.openmobilehub.android.auth.plugin.google.gms.util.Constants
 import com.openmobilehub.android.auth.plugin.microsoft.MicrosoftAuthClient
+import com.openmobilehub.android.auth.plugin.microsoft.mobileweb.presentation.MicrosoftMobileWebAuthClient
 import com.openmobilehub.android.auth.sample.BuildConfig
 import com.openmobilehub.android.auth.sample.R
 import com.openmobilehub.android.auth.plugin.google.nongms.utils.Constants as NonGmsConstants
@@ -67,11 +69,31 @@ object SingletonModule {
     }
 
     @Provides
+    @ProvidesMicrosoftMobileWebAuthClient
+    fun providesMicrosoftMobileWebAuthClient(@ApplicationContext context: Context): OmhAuthClient {
+        return MicrosoftMobileWebAuthClient.Builder(BuildConfig.MICROSOFT_CLIENT_ID).also { builder ->
+            arrayListOf("User.Read", "openid", "profile", "email").forEach { scope ->
+                builder.addScope(scope)
+            }
+        }.build(context)
+    }
+
+    @Provides
     fun providesDropboxAuthClient(@ApplicationContext context: Context): DropboxAuthClient {
         return DropboxAuthClient(
             scopes = arrayListOf("account_info.read"),
             context = context,
             appId = BuildConfig.DROPBOX_APP_KEY,
         )
+    }
+
+    @Provides
+    @ProvidesDropboxMobileWebAuthClient
+    fun providesDropboxMobileWebAuthClient(@ApplicationContext context: Context): OmhAuthClient {
+        return DropboxMobileWebAuthClient.Builder(BuildConfig.DROPBOX_APP_KEY).also { builder ->
+            arrayListOf("account_info.read").forEach { scope ->
+                builder.addScope(scope)
+            }
+        }.build(context)
     }
 }

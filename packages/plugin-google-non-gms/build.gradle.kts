@@ -27,6 +27,7 @@ val useLocalProjects = project.rootProject.extra["useLocalProjects"] as Boolean
 dependencies {
     if (useLocalProjects) {
         api(project(":packages:core"))
+        implementation(project(":packages:plugin-common-mobileweb"))
     } else {
         api(Libs.omhAuthCore)
     }
@@ -60,7 +61,7 @@ dependencies {
 
     // Test dependencies
     testImplementation(Libs.junit)
-    androidTestImplementation(Libs.androidJunit)
+    testImplementation(Libs.androidJunit)
     testImplementation(Libs.mockk)
     testImplementation(Libs.coroutineTesting)
 }

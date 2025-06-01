@@ -17,7 +17,7 @@
 package com.openmobilehub.android.auth.plugin.google.nongms.data.utils
 
 import com.openmobilehub.android.auth.plugin.google.nongms.data.login.GoogleAuthREST
-import com.openmobilehub.android.auth.plugin.google.nongms.data.utils.retrofit.ApiResultCallAdapterFactory
+import com.openmobilehub.android.auth.plugin.common.mobileweb.data.utils.retrofit.ApiResultCallAdapterFactory
 import com.openmobilehub.android.auth.plugin.google.nongms.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

@@ -17,7 +17,7 @@
 package com.openmobilehub.android.auth.plugin.google.nongms.data.login
 
 import com.openmobilehub.android.auth.plugin.google.nongms.data.login.models.AuthTokenResponse
-import com.openmobilehub.android.auth.plugin.google.nongms.domain.models.ApiResult
+import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.models.ApiResult
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
@@ -32,7 +32,7 @@ internal interface GoogleAuthREST {
         @Field("redirect_uri") redirectUri: String,
         @Field("code_verifier") codeVerifier: String,
         @Field("grant_type") grantType: String = "authorization_code",
-    ): ApiResult<com.openmobilehub.android.auth.plugin.google.nongms.data.login.models.AuthTokenResponse>
+    ): ApiResult<AuthTokenResponse>
 
     @POST("/token")
     @FormUrlEncoded
@@ -40,7 +40,7 @@ internal interface GoogleAuthREST {
         @Field("client_id") clientId: String,
         @Field("refresh_token") refreshToken: String,
         @Field("grant_type") grantType: String = "refresh_token"
-    ): ApiResult<com.openmobilehub.android.auth.plugin.google.nongms.data.login.models.AuthTokenResponse>
+    ): ApiResult<AuthTokenResponse>
 
     @POST("/revoke")
     @FormUrlEncoded

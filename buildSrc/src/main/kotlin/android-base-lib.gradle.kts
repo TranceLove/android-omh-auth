@@ -43,15 +43,15 @@ android {
         consumerProguardFiles("consumer-rules.pro")
     }
 
-    packagingOptions {
+    packaging {
         resources.excludes.add("META-INF/*")
         resources.excludes.add("**/LICENSE.txt")
         resources.excludes.add("**/README.txt")
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     testOptions {
@@ -60,6 +60,10 @@ android {
             isReturnDefaultValues = true
             isIncludeAndroidResources = true
         }
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
     }
 }
 

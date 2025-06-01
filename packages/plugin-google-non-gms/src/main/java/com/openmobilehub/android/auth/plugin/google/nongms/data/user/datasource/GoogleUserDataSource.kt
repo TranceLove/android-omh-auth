@@ -24,10 +24,11 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier
 import com.google.api.client.http.javanet.NetHttpTransport
 import com.google.api.client.json.gson.GsonFactory
+import com.openmobilehub.android.auth.plugin.common.mobileweb.data.user.datasource.UserDataSource
 import java.util.Collections
 
 internal class GoogleUserDataSource(private val sharedPreferences: SharedPreferences) :
-    com.openmobilehub.android.auth.plugin.google.nongms.data.user.datasource.UserDataSource {
+    UserDataSource {
 
     /**
      * Handles the ID token returned from the Google Auth Provider. This uses the googleapis lib

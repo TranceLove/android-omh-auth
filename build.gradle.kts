@@ -120,6 +120,12 @@ tasks.register("publishPluginsToMavenLocal") {
         ":packages:plugin-microsoft:publishToMavenLocal",
         ":packages:plugin-dropbox:assembleRelease",
         ":packages:plugin-dropbox:publishToMavenLocal",
+        ":packages:plugin-common-mobileweb:assembleRelease",
+        ":packages:plugin-common-mobileweb:publishToMavenLocal",
+        ":packages:plugin-microsoft-mobileweb:assembleRelease",
+        ":packages:plugin-microsoft-mobileweb:publishToMavenLocal",
+        ":packages:plugin-dropbox-mobileweb:assembleRelease",
+        ":packages:plugin-dropbox-mobileweb:publishToMavenLocal",
     )
 }
 
@@ -176,12 +182,12 @@ if (!useMavenLocal) {
 }
 
 fun getValueFromEnvOrProperties(name: String): Any? {
-    val localProperties = gradleLocalProperties(rootDir)
+    val localProperties = gradleLocalProperties(rootDir, project.providers)
     return System.getenv(name) ?: localProperties[name]
 }
 
 fun getBooleanFromProperties(name: String): Boolean {
-    val localProperties = gradleLocalProperties(rootDir)
+    val localProperties = gradleLocalProperties(rootDir, project.providers)
     return (project.ext.has(name) && project.ext.get(name) == "true") || localProperties[name] == "true"
 }
 

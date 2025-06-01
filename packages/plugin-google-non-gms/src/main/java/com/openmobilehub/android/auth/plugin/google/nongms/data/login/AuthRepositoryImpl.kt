@@ -19,20 +19,21 @@ package com.openmobilehub.android.auth.plugin.google.nongms.data.login
 import android.content.Context
 import android.content.SharedPreferences
 import com.openmobilehub.android.auth.core.utils.EncryptedSharedPreferences
-import com.openmobilehub.android.auth.plugin.google.nongms.data.login.datasource.AuthDataSource
+
 import com.openmobilehub.android.auth.plugin.google.nongms.data.login.datasource.GoogleAuthDataSource
 import com.openmobilehub.android.auth.plugin.google.nongms.data.login.models.AuthTokenResponse
 import com.openmobilehub.android.auth.plugin.google.nongms.data.utils.GoogleRetrofitImpl
-import com.openmobilehub.android.auth.plugin.google.nongms.domain.auth.AuthRepository
-import com.openmobilehub.android.auth.plugin.google.nongms.domain.models.ApiResult
-import com.openmobilehub.android.auth.plugin.google.nongms.domain.models.OAuthTokens
 import com.openmobilehub.android.auth.plugin.google.nongms.utils.Constants
+import com.openmobilehub.android.auth.plugin.common.mobileweb.data.login.datasource.AuthDataSource
+import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.auth.AuthRepository
+import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.models.ApiResult
+import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.models.OAuthTokens
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 internal class AuthRepositoryImpl(
-    private val googleAuthDataSource: AuthDataSource,
+    private val googleAuthDataSource: AuthDataSource<AuthTokenResponse>,
     private val ioDispatcher: CoroutineDispatcher,
 ) : AuthRepository {
 
@@ -42,7 +43,7 @@ internal class AuthRepositoryImpl(
         redirectUri: String,
         codeVerifier: String
     ): ApiResult<OAuthTokens> = withContext(ioDispatcher) {
-        val result: ApiResult<AuthTokenResponse> = googleAuthDataSource.getToken(
+        val result: ApiResult<AuthTokenResponse> = googleAuthDataSource.requestToken(
             clientId = clientId,
             authCode = authCode,
             redirectUri = redirectUri,
@@ -122,7 +123,7 @@ internal class AuthRepositoryImpl(
                         context,
                         Constants.PROVIDER_GOOGLE
                     )
-                val googleAuthDataSource: AuthDataSource = GoogleAuthDataSource(
+                val googleAuthDataSource: AuthDataSource<AuthTokenResponse> = GoogleAuthDataSource(
                     authService = authService,
                     sharedPreferences = sharedPreferences
                 )

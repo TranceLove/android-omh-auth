@@ -17,9 +17,8 @@
 package com.openmobilehub.android.plugin.auth.nongms.repositories
 
 import com.openmobilehub.android.auth.core.models.OmhUserProfile
-import com.openmobilehub.android.auth.plugin.google.nongms.data.user.UserRepositoryImpl
-import com.openmobilehub.android.auth.plugin.google.nongms.data.user.datasource.UserDataSource
-import com.openmobilehub.android.auth.plugin.google.nongms.domain.user.UserRepository
+import com.openmobilehub.android.auth.plugin.common.mobileweb.data.user.datasource.UserDataSource
+import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.user.UserRepository
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.every

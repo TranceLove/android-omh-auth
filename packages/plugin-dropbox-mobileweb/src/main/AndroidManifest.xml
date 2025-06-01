@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <activity
+            android:name="com.openmobilehub.android.auth.plugin.dropbox.mobileweb.presentation.redirect.RedirectActivity"
+            android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter android:autoVerify="false">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:host="@string/com.openmobilehub.android.auth.dropbox.oauth2.redirect.host"
+                      android:pathPrefix="@string/com.openmobilehub.android.auth.dropbox.oauth2.redirect.pathPrefix"
+                      android:scheme="@string/com.openmobilehub.android.auth.dropbox.oauth2.redirect.scheme" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
