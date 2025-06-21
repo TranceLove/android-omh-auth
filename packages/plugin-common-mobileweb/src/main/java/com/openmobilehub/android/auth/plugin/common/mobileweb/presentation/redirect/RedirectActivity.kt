@@ -18,23 +18,21 @@ package com.openmobilehub.android.auth.plugin.common.mobileweb.presentation.redi
 
 import android.app.Activity
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.browser.customtabs.CustomTabsIntent
 import com.openmobilehub.android.auth.core.models.OmhAuthException
 import com.openmobilehub.android.auth.core.models.OmhAuthStatusCodes
+import com.openmobilehub.android.auth.plugin.common.mobileweb.databinding.ActivityRedirectBinding
 import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.models.ApiResult
 import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.models.OAuthTokens
 import com.openmobilehub.android.auth.plugin.common.mobileweb.utils.Constants
 import com.openmobilehub.android.auth.plugin.common.mobileweb.utils.EventWrapper
 import com.openmobilehub.android.auth.plugin.common.mobileweb.utils.lifecycle.LifecycleUtil
 import com.openmobilehub.android.auth.plugin.common.mobileweb.utils.nullOrHandled
-import com.openmobilehub.android.auth.plugin.common.mobileweb.databinding.ActivityRedirectBinding
 
 
 abstract class RedirectActivity : AppCompatActivity() {

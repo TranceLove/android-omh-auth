@@ -41,6 +41,7 @@ object Versions {
 
     // Android
     const val androidAppCompat = "1.6.1"
+    const val androidConstraintLayout = "2.2.1"
     const val material = "1.8.0"
 
     // OMH

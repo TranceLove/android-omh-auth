@@ -44,9 +44,8 @@ dependencies {
 
     // Custom tabs
     implementation(Libs.customTabs)
-
+    implementation(Libs.androidConstraintLayout)
     implementation(Libs.androidAppCompat)
-    implementation(Libs.material)
 
     // Test dependencies
     testImplementation(Libs.junit)

@@ -65,6 +65,7 @@ object Libs {
 
     // Android
     val androidAppCompat by lazy { "androidx.appcompat:appcompat:${Versions.androidAppCompat}" }
+    val androidConstraintLayout by lazy { "androidx.constraintlayout:constraintlayout:${Versions.androidConstraintLayout}" }
     val material by lazy { "com.google.android.material:material:${Versions.material}" }
 
     // Google Sign In
