@@ -23,7 +23,8 @@
         <activity
             android:name="com.openmobilehub.android.auth.plugin.google.nongms.presentation.redirect.RedirectActivity"
             android:exported="true"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 

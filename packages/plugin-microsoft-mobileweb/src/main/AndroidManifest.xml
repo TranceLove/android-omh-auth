@@ -4,7 +4,8 @@
         <activity
             android:name="com.openmobilehub.android.auth.plugin.microsoft.mobileweb.presentation.redirect.RedirectActivity"
             android:exported="true"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter android:autoVerify="false">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />

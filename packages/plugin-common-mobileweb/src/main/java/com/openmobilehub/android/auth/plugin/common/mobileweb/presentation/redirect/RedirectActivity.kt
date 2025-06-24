@@ -23,6 +23,7 @@ import android.view.LayoutInflater
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.browser.customtabs.CustomTabsIntent
 import com.openmobilehub.android.auth.core.models.OmhAuthException
 import com.openmobilehub.android.auth.core.models.OmhAuthStatusCodes
@@ -63,7 +64,10 @@ abstract class RedirectActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+
         super.onCreate(savedInstanceState)
+
         setContentView(binding.root)
         if (intent.getStringExtra(CLIENT_ID) == null) {
             returnResult(
