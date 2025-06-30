@@ -144,6 +144,7 @@ dependencies {
         implementation(project(":packages:plugin-microsoft-mobileweb"))
         implementation(project(":packages:plugin-dropbox"))
         implementation(project(":packages:plugin-dropbox-mobileweb"))
+        implementation(project(":packages:plugin-box-mobileweb"))
     } else {
         implementation(Libs.omhGoogleGms)
         implementation(Libs.omhGoogleNonGms)

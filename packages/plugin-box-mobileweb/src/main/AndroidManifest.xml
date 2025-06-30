@@ -21,21 +21,20 @@
 
     <application>
         <activity
-            android:name="com.openmobilehub.android.auth.plugin.google.nongms.presentation.redirect.RedirectActivity"
+            android:name="com.openmobilehub.android.auth.plugin.box.mobileweb.presentation.redirect.RedirectActivity"
             android:exported="true"
-            android:launchMode="singleTask"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:host="@string/com.openmobilehub.android.auth.google.oauth2.redirect.host"
-                      android:pathPrefix="@string/com.openmobilehub.android.auth.google.oauth2.redirect.pathPrefix"
-                      android:scheme="@string/com.openmobilehub.android.auth.google.oauth2.redirect.scheme" />
+                <data
+                    android:pathPrefix="@string/com.openmobilehub.android.auth.box.oauth2.redirect.pathPrefix"
+                    android:host="@string/com.openmobilehub.android.auth.box.oauth2.redirect.host"
+                    android:scheme="@string/com.openmobilehub.android.auth.box.oauth2.redirect.scheme" />
             </intent-filter>
         </activity>
     </application>
 </manifest>
-

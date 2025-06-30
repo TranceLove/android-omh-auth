@@ -21,13 +21,19 @@ annotation class ProvidesDropboxMobileWebAuthClient
 @Retention(AnnotationRetention.BINARY)
 annotation class ProvidesMicrosoftMobileWebAuthClient
 
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class ProvidesBoxMobileWebAuthClient
+
+@Suppress("LongParameterList", "TooGenericExceptionThrown")
 class AuthClientProvider @Inject constructor(
     private val googleAuthClient: OmhAuthClient,
     private val facebookAuthClient: FacebookAuthClient,
     private val microsoftAuthClient: MicrosoftAuthClient,
     @ProvidesMicrosoftMobileWebAuthClient private val microsoftMobileWebAuthClient: OmhAuthClient,
     private val dropboxAuthClient: DropboxAuthClient,
-    @ProvidesDropboxMobileWebAuthClient private val dropboxMobileWebAuthClient: OmhAuthClient
+    @ProvidesDropboxMobileWebAuthClient private val dropboxMobileWebAuthClient: OmhAuthClient,
+    @ProvidesBoxMobileWebAuthClient private val boxMobileWebAuthClient: OmhAuthClient,
 ) {
     suspend fun getClient(context: Context): OmhAuthClient = withContext(Dispatchers.IO) {
         when (LoginState(context).getLoggedInProvider().firstOrNull()) {
@@ -37,6 +43,7 @@ class AuthClientProvider @Inject constructor(
             "microsoft_mobileweb" -> microsoftMobileWebAuthClient
             "dropbox" -> dropboxAuthClient
             "dropbox_mobileweb" -> dropboxMobileWebAuthClient
+            "box_mobileweb" -> boxMobileWebAuthClient
             else -> throw Exception("No login provider found")
         }
     }

@@ -32,13 +32,12 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.openmobilehub.android.auth.core.OmhAuthClient
 import com.openmobilehub.android.auth.plugin.dropbox.DropboxAuthClient
-import com.openmobilehub.android.auth.plugin.dropbox.mobileweb.presentation.DropboxMobileWebAuthClient
 import com.openmobilehub.android.auth.plugin.facebook.FacebookAuthClient
 import com.openmobilehub.android.auth.plugin.microsoft.MicrosoftAuthClient
-import com.openmobilehub.android.auth.plugin.microsoft.mobileweb.presentation.MicrosoftMobileWebAuthClient
 import com.openmobilehub.android.auth.sample.R
 import com.openmobilehub.android.auth.sample.databinding.FragmentLoginBinding
 import com.openmobilehub.android.auth.sample.di.LoginState
+import com.openmobilehub.android.auth.sample.di.ProvidesBoxMobileWebAuthClient
 import com.openmobilehub.android.auth.sample.di.ProvidesDropboxMobileWebAuthClient
 import com.openmobilehub.android.auth.sample.di.ProvidesMicrosoftMobileWebAuthClient
 import dagger.hilt.android.AndroidEntryPoint
@@ -78,6 +77,11 @@ class LoginFragment : Fragment() {
         handleLoginResult("dropbox_mobileweb")
     )
 
+    private val boxMobileWebLoginLauncher: ActivityResultLauncher<Intent> = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult(),
+        handleLoginResult("box_mobileweb")
+    )
+
     private var binding: FragmentLoginBinding? = null
 
     @Inject
@@ -99,6 +103,10 @@ class LoginFragment : Fragment() {
     @Inject
     @ProvidesDropboxMobileWebAuthClient
     lateinit var dropboxMobileWebAuthClient: OmhAuthClient
+
+    @Inject
+    @ProvidesBoxMobileWebAuthClient
+    lateinit var boxMobileWebAuthClient: OmhAuthClient
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -122,6 +130,7 @@ class LoginFragment : Fragment() {
         binding?.btnDropboxLogin?.setOnClickListener { startDropboxLogin() }
         binding?.btnDropboxMobilewebLogin?.setOnClickListener { startDropboxMobileWebLogin() }
         binding?.btnMicrosoftMobilewebLogin?.setOnClickListener { startMicrosoftMobileWebLogin() }
+        binding?.btnBoxMobilewebLogin?.setOnClickListener { startBoxMobileWebLogin() }
     }
 
     private fun startGoogleLogin() {
@@ -157,6 +166,11 @@ class LoginFragment : Fragment() {
     private fun startDropboxMobileWebLogin() {
         val loginIntent = dropboxMobileWebAuthClient.getLoginIntent()
         dropboxMobileWebLoginLauncher.launch(loginIntent)
+    }
+
+    private fun startBoxMobileWebLogin() {
+        val loginIntent = boxMobileWebAuthClient.getLoginIntent()
+        boxMobileWebLoginLauncher.launch(loginIntent)
     }
 
     private fun navigateToLoggedIn() {

@@ -19,6 +19,7 @@ package com.openmobilehub.android.auth.sample.di
 import android.content.Context
 import com.openmobilehub.android.auth.core.OmhAuthClient
 import com.openmobilehub.android.auth.core.OmhAuthProvider
+import com.openmobilehub.android.auth.plugin.box.mobileweb.presentation.BoxMobileWebAuthClient
 import com.openmobilehub.android.auth.plugin.dropbox.DropboxAuthClient
 import com.openmobilehub.android.auth.plugin.dropbox.mobileweb.presentation.DropboxMobileWebAuthClient
 import com.openmobilehub.android.auth.plugin.facebook.FacebookAuthClient
@@ -92,6 +93,19 @@ object SingletonModule {
     fun providesDropboxMobileWebAuthClient(@ApplicationContext context: Context): OmhAuthClient {
         return DropboxMobileWebAuthClient.Builder(BuildConfig.DROPBOX_APP_KEY).also { builder ->
             arrayListOf("account_info.read").forEach { scope ->
+                builder.addScope(scope)
+            }
+        }.build(context)
+    }
+
+    @Provides
+    @ProvidesBoxMobileWebAuthClient
+    fun providesBoxMobileWebAuthClient(@ApplicationContext context: Context): OmhAuthClient {
+        return BoxMobileWebAuthClient.Builder(
+            clientId = BuildConfig.BOX_CLIENT_ID,
+            clientSecret = BuildConfig.BOX_CLIENT_SECRET,
+        ).also { builder ->
+            arrayListOf("root_readonly", "root_readwrite").forEach { scope ->
                 builder.addScope(scope)
             }
         }.build(context)

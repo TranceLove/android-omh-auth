@@ -8,6 +8,7 @@
     <string name="microsoft_mobileweb_login">Microsoft Login (Mobile Web)</string>
     <string name="dropbox_login">Dropbox Login</string>
     <string name="dropbox_mobileweb_login">Dropbox Login (Mobile Web)</string>
+    <string name="box_mobileweb_login">Box.com Login (Mobile Web)</string>
     <string name="name_placeholder"><b>Name:</b> %s</string>
     <string name="surname_placeholder"><b>Surname:</b> %s</string>
     <string name="email_placeholder"><b>Email:</b> %s</string>
@@ -25,4 +26,10 @@
     <string name="com.openmobilehub.android.auth.dropbox.oauth2.redirect.scheme" translatable="false">https</string>
     <string name="com.openmobilehub.android.auth.dropbox.oauth2.redirect.host" translatable="false">auth.openmobilehub.org</string>
     <string name="com.openmobilehub.android.auth.dropbox.oauth2.redirect.pathPrefix" translatable="false">/dropbox/oauth2/callback</string>
+    <string name="com.openmobilehub.android.auth.google.oauth2.redirect.scheme" translatable="false">https</string>
+    <string name="com.openmobilehub.android.auth.google.oauth2.redirect.host" translatable="false">auth.openmobilehub.org</string>
+    <string name="com.openmobilehub.android.auth.google.oauth2.redirect.pathPrefix" translatable="false">/google/oauth2/redirect</string>
+    <string name="com.openmobilehub.android.auth.box.oauth2.redirect.scheme" translatable="false">https</string>
+    <string name="com.openmobilehub.android.auth.box.oauth2.redirect.host" translatable="false">auth.openmobilehub.org</string>
+    <string name="com.openmobilehub.android.auth.box.oauth2.redirect.pathPrefix" translatable="false">/box/oauth2/redirect</string>
 </resources>
