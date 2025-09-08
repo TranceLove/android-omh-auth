@@ -40,6 +40,7 @@ dependencies {
         implementation(project(":packages:plugin-common-mobileweb"))
     } else {
         api(Libs.omhAuthCore)
+        implementation(Libs.omhCommonMobileWeb)
     }
 
     // KTX

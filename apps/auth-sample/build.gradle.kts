@@ -151,6 +151,10 @@ dependencies {
         implementation(Libs.omhFacebook)
         implementation(Libs.omhMicrosoft)
         implementation(Libs.omhDropbox)
+        implementation(Libs.omhCommonMobileWeb)
+        implementation(Libs.omhMicrosoftMobileWeb)
+        implementation(Libs.omhDropboxMobileWeb)
+        implementation(Libs.omhBoxMobileWeb)
     }
 }
 

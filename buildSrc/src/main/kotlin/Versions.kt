@@ -52,6 +52,10 @@ object Versions {
     const val omhFacebook = "2.0.4"
     const val omhMicrosoft = "2.0.4"
     const val omhDropbox = "2.0.4"
+    const val omhCommonMobileWeb = "2.0.4"
+    const val omhBoxMobileWeb = "2.0.4"
+    const val omhMicrosoftMobileWeb = "2.0.4"
+    const val omhDropboxMobileWeb = "2.0.4"
 
     // Google Sign In
     const val googleSignIn = "20.4.1"

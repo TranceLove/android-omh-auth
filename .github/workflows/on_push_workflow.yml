@@ -60,6 +60,10 @@ jobs:
             "plugin-google-gms",
             "plugin-google-non-gms",
             "plugin-microsoft",
+            "plugin-common-mobileweb",
+            "plugin-dropbox-mobileweb",
+            "plugin-microsoft-mobileweb",
+            "plugin-box-mobileweb"
           ]
     uses: ./.github/workflows/build_and_publish_to_maven_remotely.yml
     with:

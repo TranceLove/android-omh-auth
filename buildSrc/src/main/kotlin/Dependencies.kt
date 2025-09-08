@@ -58,6 +58,10 @@ object Libs {
     val omhFacebook by lazy { "com.openmobilehub.android.auth:plugin-facebook:${Versions.omhFacebook}" }
     val omhMicrosoft by lazy { "com.openmobilehub.android.auth:plugin-microsoft:${Versions.omhMicrosoft}" }
     val omhDropbox by lazy { "com.openmobilehub.android.auth:plugin-dropbox:${Versions.omhDropbox}" }
+    val omhCommonMobileWeb by lazy { "com.openmobilehub.android.auth:plugin-common-mobileweb:${Versions.omhCommonMobileWeb}" }
+    val omhBoxMobileWeb by lazy { "com.openmobilehub.android.auth:plugin-box-mobileweb:${Versions.omhBoxMobileWeb}" }
+    val omhMicrosoftMobileWeb by lazy { "com.openmobilehub.android.auth:plugin-microsoft-mobileweb:${Versions.omhMicrosoftMobileWeb}" }
+    val omhDropboxMobileWeb by lazy { "com.openmobilehub.android.auth:plugin-dropbox-mobileweb:${Versions.omhDropboxMobileWeb}" }
 
     // Google Api Client
     val googleApiClient by lazy { "com.google.api-client:google-api-client:${Versions.googleApiClient}" }
