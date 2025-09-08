@@ -18,7 +18,7 @@ package com.openmobilehub.android.auth.plugin.box.mobileweb.data.utils
 
 import com.openmobilehub.android.auth.plugin.box.mobileweb.data.login.BoxApiRest
 import com.openmobilehub.android.auth.plugin.box.mobileweb.BuildConfig
-import com.openmobilehub.android.auth.plugin.common.mobileweb.data.utils.retrofit.ApiResultCallAdapterFactory
+import com.openmobilehub.android.auth.core.common.mobileweb.data.utils.retrofit.ApiResultCallAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

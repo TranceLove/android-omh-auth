@@ -26,11 +26,11 @@ import com.openmobilehub.android.auth.core.async.OmhTask
 import com.openmobilehub.android.auth.core.models.OmhAuthException
 import com.openmobilehub.android.auth.core.models.OmhUserProfile
 import com.openmobilehub.android.auth.plugin.box.mobileweb.presentation.redirect.RedirectActivity
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.auth.AuthRepository
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.auth.AuthUseCase
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.models.ApiResult
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.user.ProfileUseCase
-import com.openmobilehub.android.auth.plugin.common.mobileweb.presentation.MobileWebCredentials
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.auth.AuthRepository
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.auth.AuthUseCase
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.models.ApiResult
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.user.ProfileUseCase
+import com.openmobilehub.android.auth.core.common.mobileweb.presentation.MobileWebCredentials
 
 /**
  * Box.com Sign-In (via mobile web) implementation of the OmhAuthClient abstraction
@@ -56,7 +56,7 @@ class BoxMobileWebAuthClient private constructor(
             RedirectActivity::class.java,
         )
             .putExtra(
-                com.openmobilehub.android.auth.plugin.common.mobileweb.presentation.redirect.RedirectActivity.CLIENT_ID,
+                com.openmobilehub.android.auth.core.common.mobileweb.presentation.redirect.RedirectActivity.CLIENT_ID,
                 clientId
             )
             .putExtra(
@@ -64,7 +64,7 @@ class BoxMobileWebAuthClient private constructor(
                 clientSecret,
             )
             .putExtra(
-                com.openmobilehub.android.auth.plugin.common.mobileweb.presentation.redirect.RedirectActivity.SCOPES,
+                com.openmobilehub.android.auth.core.common.mobileweb.presentation.redirect.RedirectActivity.SCOPES,
                 scopes
             )
     }

@@ -16,7 +16,7 @@
 
 package com.openmobilehub.android.auth.plugin.microsoft.mobileweb.data.utils
 
-import com.openmobilehub.android.auth.plugin.common.mobileweb.data.utils.retrofit.ApiResultCallAdapterFactory
+import com.openmobilehub.android.auth.core.common.mobileweb.data.utils.retrofit.ApiResultCallAdapterFactory
 import com.openmobilehub.android.auth.plugin.microsoft.mobileweb.data.login.MicrosoftAuthRest
 import com.openmobilehub.android.auth.plugin.microsoft.mobileweb.BuildConfig
 import com.openmobilehub.android.auth.plugin.microsoft.mobileweb.data.login.MicrosoftApiRest

@@ -17,8 +17,8 @@
 package com.openmobilehub.android.auth.plugin.google.nongms.presentation.redirect
 
 import androidx.activity.viewModels
-import com.openmobilehub.android.auth.plugin.common.mobileweb.presentation.redirect.RedirectActivity
-import com.openmobilehub.android.auth.plugin.common.mobileweb.presentation.redirect.RedirectViewModel
+import com.openmobilehub.android.auth.core.common.mobileweb.presentation.redirect.RedirectActivity
+import com.openmobilehub.android.auth.core.common.mobileweb.presentation.redirect.RedirectViewModel
 import com.openmobilehub.android.auth.plugin.google.nongms.factories.ViewModelFactory
 
 internal class RedirectActivity : RedirectActivity() {

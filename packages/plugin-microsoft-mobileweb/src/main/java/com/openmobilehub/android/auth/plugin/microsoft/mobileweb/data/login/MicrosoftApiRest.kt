@@ -3,7 +3,7 @@ package com.openmobilehub.android.auth.plugin.microsoft.mobileweb.data.login
 import androidx.annotation.Keep
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.models.ApiResult
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.models.ApiResult
 import retrofit2.http.GET
 import retrofit2.http.Header
 

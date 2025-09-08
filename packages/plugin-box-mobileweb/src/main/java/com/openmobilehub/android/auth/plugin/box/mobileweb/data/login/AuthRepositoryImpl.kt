@@ -23,10 +23,10 @@ import com.openmobilehub.android.auth.plugin.box.mobileweb.data.login.datasource
 import com.openmobilehub.android.auth.plugin.box.mobileweb.data.login.models.AuthTokenResponse
 import com.openmobilehub.android.auth.plugin.box.mobileweb.data.utils.BoxRetrofitImpl
 import com.openmobilehub.android.auth.plugin.box.mobileweb.utils.Constants.PROVIDER_BOX
-import com.openmobilehub.android.auth.plugin.common.mobileweb.data.login.datasource.AuthDataSource
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.auth.AuthRepository
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.models.ApiResult
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.models.OAuthTokens
+import com.openmobilehub.android.auth.core.common.mobileweb.data.login.datasource.AuthDataSource
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.auth.AuthRepository
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.models.ApiResult
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.models.OAuthTokens
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

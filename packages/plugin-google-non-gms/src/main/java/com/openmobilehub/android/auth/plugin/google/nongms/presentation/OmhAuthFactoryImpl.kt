@@ -22,9 +22,9 @@ import com.openmobilehub.android.auth.core.OmhAuthClient
 import com.openmobilehub.android.auth.core.OmhAuthFactory
 import com.openmobilehub.android.auth.core.OmhCredentials
 import com.openmobilehub.android.auth.plugin.google.nongms.data.login.AuthRepositoryImpl
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.auth.AuthRepository
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.auth.AuthUseCase
-import com.openmobilehub.android.auth.plugin.common.mobileweb.presentation.MobileWebCredentials
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.auth.AuthRepository
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.auth.AuthUseCase
+import com.openmobilehub.android.auth.core.common.mobileweb.presentation.MobileWebCredentials
 
 @Keep
 internal object OmhAuthFactoryImpl : OmhAuthFactory {

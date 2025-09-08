@@ -16,6 +16,6 @@ jobs:
     name: Publish Mobile Web Plugin Common Components
     uses: ./.github/workflows/build_and_publish_to_maven_remotely.yml
     with:
-      package-name: :packages:plugin-common-mobileweb
+      package-name: :packages:core-common-mobileweb
       destination-repository: ${{ github.event.inputs.destination-repository }}
     secrets: inherit

@@ -19,7 +19,7 @@ package com.openmobilehub.android.auth.plugin.dropbox.mobileweb.data.utils
 import com.openmobilehub.android.auth.plugin.dropbox.mobileweb.BuildConfig
 import com.openmobilehub.android.auth.plugin.dropbox.mobileweb.data.login.DropboxAuthRest
 import com.openmobilehub.android.auth.plugin.dropbox.mobileweb.data.login.DropboxApiRest
-import com.openmobilehub.android.auth.plugin.common.mobileweb.data.utils.retrofit.ApiResultCallAdapterFactory
+import com.openmobilehub.android.auth.core.common.mobileweb.data.utils.retrofit.ApiResultCallAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

@@ -20,7 +20,7 @@ import android.content.SharedPreferences
 import android.util.Base64
 import androidx.core.content.edit
 import com.openmobilehub.android.auth.core.models.OmhUserProfile
-import com.openmobilehub.android.auth.plugin.common.mobileweb.data.user.datasource.UserDataSource
+import com.openmobilehub.android.auth.core.common.mobileweb.data.user.datasource.UserDataSource
 import com.openmobilehub.android.auth.plugin.microsoft.mobileweb.utils.Constants
 import org.json.JSONObject
 import java.security.GeneralSecurityException

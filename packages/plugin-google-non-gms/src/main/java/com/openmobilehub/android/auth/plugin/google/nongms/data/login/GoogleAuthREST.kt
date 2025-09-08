@@ -17,7 +17,7 @@
 package com.openmobilehub.android.auth.plugin.google.nongms.data.login
 
 import com.openmobilehub.android.auth.plugin.google.nongms.data.login.models.AuthTokenResponse
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.models.ApiResult
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.models.ApiResult
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST

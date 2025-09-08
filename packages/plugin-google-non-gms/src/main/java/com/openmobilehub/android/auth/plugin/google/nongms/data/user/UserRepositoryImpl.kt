@@ -22,8 +22,8 @@ import com.openmobilehub.android.auth.core.models.OmhUserProfile
 import com.openmobilehub.android.auth.core.utils.EncryptedSharedPreferences
 import com.openmobilehub.android.auth.plugin.google.nongms.data.user.datasource.GoogleUserDataSource
 import com.openmobilehub.android.auth.plugin.google.nongms.utils.Constants
-import com.openmobilehub.android.auth.plugin.common.mobileweb.data.user.datasource.UserDataSource
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.user.UserRepository
+import com.openmobilehub.android.auth.core.common.mobileweb.data.user.datasource.UserDataSource
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.user.UserRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

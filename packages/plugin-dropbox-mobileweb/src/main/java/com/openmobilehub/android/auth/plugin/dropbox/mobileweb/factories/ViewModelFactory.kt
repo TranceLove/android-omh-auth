@@ -20,10 +20,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
 import androidx.lifecycle.viewmodel.CreationExtras
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.auth.AuthRepository
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.auth.AuthUseCase
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.user.ProfileUseCase
-import com.openmobilehub.android.auth.plugin.common.mobileweb.presentation.redirect.RedirectViewModel
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.auth.AuthRepository
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.auth.AuthUseCase
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.user.ProfileUseCase
+import com.openmobilehub.android.auth.core.common.mobileweb.presentation.redirect.RedirectViewModel
 import com.openmobilehub.android.auth.plugin.dropbox.mobileweb.data.login.AuthRepositoryImpl
 import com.openmobilehub.android.auth.plugin.dropbox.mobileweb.data.user.UserRepositoryImpl
 

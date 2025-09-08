@@ -21,8 +21,8 @@ import androidx.core.content.edit
 import com.openmobilehub.android.auth.core.models.OmhUserProfile
 import com.openmobilehub.android.auth.plugin.box.mobileweb.data.utils.BoxRetrofitImpl
 import com.openmobilehub.android.auth.plugin.box.mobileweb.utils.Constants
-import com.openmobilehub.android.auth.plugin.common.mobileweb.data.login.datasource.AuthDataSource.Companion.ACCESS_TOKEN
-import com.openmobilehub.android.auth.plugin.common.mobileweb.data.user.datasource.UserDataSource
+import com.openmobilehub.android.auth.core.common.mobileweb.data.login.datasource.AuthDataSource.Companion.ACCESS_TOKEN
+import com.openmobilehub.android.auth.core.common.mobileweb.data.user.datasource.UserDataSource
 
 internal class BoxUserDataSource(private val sharedPreferences: SharedPreferences) :
     UserDataSource {

@@ -25,8 +25,8 @@ import androidx.browser.customtabs.CustomTabsIntent
 import com.openmobilehub.android.auth.plugin.microsoft.mobileweb.factories.ViewModelFactory
 import com.openmobilehub.android.auth.core.models.OmhAuthException
 import com.openmobilehub.android.auth.core.models.OmhAuthStatusCodes
-import com.openmobilehub.android.auth.plugin.common.mobileweb.presentation.redirect.RedirectActivity
-import com.openmobilehub.android.auth.plugin.common.mobileweb.presentation.redirect.RedirectViewModel
+import com.openmobilehub.android.auth.core.common.mobileweb.presentation.redirect.RedirectActivity
+import com.openmobilehub.android.auth.core.common.mobileweb.presentation.redirect.RedirectViewModel
 
 class RedirectActivity : RedirectActivity() {
 

@@ -25,8 +25,8 @@ import com.openmobilehub.android.auth.plugin.box.mobileweb.R
 import com.openmobilehub.android.auth.plugin.box.mobileweb.data.login.BoxApiRest
 import com.openmobilehub.android.auth.plugin.box.mobileweb.data.login.models.AuthTokenResponse
 import com.openmobilehub.android.auth.plugin.box.mobileweb.utils.Constants
-import com.openmobilehub.android.auth.plugin.common.mobileweb.data.login.datasource.AuthDataSource
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.models.ApiResult
+import com.openmobilehub.android.auth.core.common.mobileweb.data.login.datasource.AuthDataSource
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.models.ApiResult
 
 
 internal class BoxAuthDataSource(

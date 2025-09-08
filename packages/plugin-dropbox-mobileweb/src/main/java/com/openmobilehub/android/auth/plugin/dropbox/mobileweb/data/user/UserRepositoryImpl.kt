@@ -20,8 +20,8 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.openmobilehub.android.auth.core.models.OmhUserProfile
 import com.openmobilehub.android.auth.core.utils.EncryptedSharedPreferences.getEncryptedSharedPrefs
-import com.openmobilehub.android.auth.plugin.common.mobileweb.data.user.datasource.UserDataSource
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.user.UserRepository
+import com.openmobilehub.android.auth.core.common.mobileweb.data.user.datasource.UserDataSource
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.user.UserRepository
 import com.openmobilehub.android.auth.plugin.dropbox.mobileweb.data.user.datasource.DropboxUserDataSource
 import com.openmobilehub.android.auth.plugin.dropbox.mobileweb.utils.Constants.PROVIDER_DROPBOX
 import kotlinx.coroutines.CoroutineDispatcher

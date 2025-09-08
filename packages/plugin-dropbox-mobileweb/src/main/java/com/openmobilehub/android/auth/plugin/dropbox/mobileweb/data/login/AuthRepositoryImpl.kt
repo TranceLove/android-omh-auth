@@ -19,10 +19,10 @@ package com.openmobilehub.android.auth.plugin.dropbox.mobileweb.data.login
 import android.content.Context
 import android.content.SharedPreferences
 import com.openmobilehub.android.auth.core.utils.EncryptedSharedPreferences.getEncryptedSharedPrefs
-import com.openmobilehub.android.auth.plugin.common.mobileweb.data.login.datasource.AuthDataSource
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.auth.AuthRepository
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.models.ApiResult
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.models.OAuthTokens
+import com.openmobilehub.android.auth.core.common.mobileweb.data.login.datasource.AuthDataSource
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.auth.AuthRepository
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.models.ApiResult
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.models.OAuthTokens
 import com.openmobilehub.android.auth.plugin.dropbox.mobileweb.data.login.datasource.DropboxAuthDataSource
 import com.openmobilehub.android.auth.plugin.dropbox.mobileweb.data.login.models.AuthTokenResponse
 import com.openmobilehub.android.auth.plugin.dropbox.mobileweb.data.utils.DropboxRetrofitImpl

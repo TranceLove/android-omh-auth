@@ -16,7 +16,7 @@
 
 package com.openmobilehub.android.auth.plugin.microsoft.mobileweb.data.login
 
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.models.ApiResult
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.models.ApiResult
 import com.openmobilehub.android.auth.plugin.microsoft.mobileweb.data.login.models.AuthTokenResponse
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded

@@ -6,8 +6,8 @@ import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.openmobilehub.android.auth.core.models.OmhAuthException
 import com.openmobilehub.android.auth.core.utils.EncryptedSharedPreferences.getEncryptedSharedPrefs
-import com.openmobilehub.android.auth.plugin.common.mobileweb.data.login.datasource.AuthDataSource
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.models.ApiResult
+import com.openmobilehub.android.auth.core.common.mobileweb.data.login.datasource.AuthDataSource
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.models.ApiResult
 import com.openmobilehub.android.auth.plugin.microsoft.mobileweb.data.login.MicrosoftAuthRest
 import com.openmobilehub.android.auth.plugin.microsoft.mobileweb.data.login.models.AuthTokenResponse
 import com.openmobilehub.android.auth.plugin.microsoft.mobileweb.utils.Constants.PROVIDER_MICROSOFT

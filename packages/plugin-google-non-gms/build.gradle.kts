@@ -27,7 +27,7 @@ val useLocalProjects = project.rootProject.extra["useLocalProjects"] as Boolean
 dependencies {
     if (useLocalProjects) {
         api(project(":packages:core"))
-        implementation(project(":packages:plugin-common-mobileweb"))
+        implementation(project(":packages:core-common-mobileweb"))
     } else {
         api(Libs.omhAuthCore)
     }

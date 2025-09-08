@@ -2,8 +2,8 @@ package com.openmobilehub.android.auth.plugin.microsoft.mobileweb.presentation
 
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.openmobilehub.android.auth.plugin.common.mobileweb.presentation.redirect.RedirectActivity.Companion.CLIENT_ID
-import com.openmobilehub.android.auth.plugin.common.mobileweb.presentation.redirect.RedirectActivity.Companion.SCOPES
+import com.openmobilehub.android.auth.core.common.mobileweb.presentation.redirect.RedirectActivity.Companion.CLIENT_ID
+import com.openmobilehub.android.auth.core.common.mobileweb.presentation.redirect.RedirectActivity.Companion.SCOPES
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

@@ -22,10 +22,10 @@ import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.AP
 import androidx.lifecycle.viewmodel.CreationExtras
 import com.openmobilehub.android.auth.plugin.box.mobileweb.data.login.AuthRepositoryImpl
 import com.openmobilehub.android.auth.plugin.box.mobileweb.data.user.UserRepositoryImpl
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.auth.AuthRepository
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.auth.AuthUseCase
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.user.ProfileUseCase
-import com.openmobilehub.android.auth.plugin.common.mobileweb.presentation.redirect.RedirectViewModel
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.auth.AuthRepository
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.auth.AuthUseCase
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.user.ProfileUseCase
+import com.openmobilehub.android.auth.core.common.mobileweb.presentation.redirect.RedirectViewModel
 
 /**
  * View model factory for the RedirectViewModel. It's required to pass the application context down

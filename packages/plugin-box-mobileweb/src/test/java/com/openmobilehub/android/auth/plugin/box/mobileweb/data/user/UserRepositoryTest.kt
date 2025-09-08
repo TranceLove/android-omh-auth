@@ -17,8 +17,8 @@
 package com.openmobilehub.android.auth.plugin.box.mobileweb.data.user
 
 import com.openmobilehub.android.auth.core.models.OmhUserProfile
-import com.openmobilehub.android.auth.plugin.common.mobileweb.data.user.datasource.UserDataSource
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.user.UserRepository
+import com.openmobilehub.android.auth.core.common.mobileweb.data.user.datasource.UserDataSource
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.user.UserRepository
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.every

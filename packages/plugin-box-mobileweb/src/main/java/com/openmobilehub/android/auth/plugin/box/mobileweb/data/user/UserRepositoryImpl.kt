@@ -22,8 +22,8 @@ import com.openmobilehub.android.auth.core.models.OmhUserProfile
 import com.openmobilehub.android.auth.core.utils.EncryptedSharedPreferences.getEncryptedSharedPrefs
 import com.openmobilehub.android.auth.plugin.box.mobileweb.data.user.datasource.BoxUserDataSource
 import com.openmobilehub.android.auth.plugin.box.mobileweb.utils.Constants.PROVIDER_BOX
-import com.openmobilehub.android.auth.plugin.common.mobileweb.data.user.datasource.UserDataSource
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.user.UserRepository
+import com.openmobilehub.android.auth.core.common.mobileweb.data.user.datasource.UserDataSource
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.user.UserRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

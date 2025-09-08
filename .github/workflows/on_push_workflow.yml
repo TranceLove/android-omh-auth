@@ -39,11 +39,19 @@ jobs:
   auth-core-remote:
     needs: auth-core-local
     name: Publish Core Package to Sonatype
+    secrets: inherit
+    strategy:
+      matrix:
+        module-name:
+          [
+            "core",
+            "core-common-mobileweb"
+          ]
     uses: ./.github/workflows/build_and_publish_to_maven_remotely.yml
     with:
-      package-name: :packages:core
+      package-name: :packages:${{ matrix.module-name }}
       destination-repository: snapshot
-    secrets: inherit
+
 
   # Build and publish snapshots of all plugins to Sonatype
   # this workflow uses local projects
@@ -60,7 +68,6 @@ jobs:
             "plugin-google-gms",
             "plugin-google-non-gms",
             "plugin-microsoft",
-            "plugin-common-mobileweb",
             "plugin-dropbox-mobileweb",
             "plugin-microsoft-mobileweb",
             "plugin-box-mobileweb"

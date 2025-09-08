@@ -21,8 +21,8 @@ import android.content.SharedPreferences
 import android.net.Uri
 import androidx.core.content.edit
 import androidx.core.net.toUri
-import com.openmobilehub.android.auth.plugin.common.mobileweb.data.login.datasource.AuthDataSource
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.models.ApiResult
+import com.openmobilehub.android.auth.core.common.mobileweb.data.login.datasource.AuthDataSource
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.models.ApiResult
 import com.openmobilehub.android.auth.plugin.dropbox.mobileweb.data.login.DropboxApiRest
 import com.openmobilehub.android.auth.plugin.dropbox.mobileweb.data.login.DropboxAuthRest
 import com.openmobilehub.android.auth.plugin.dropbox.mobileweb.data.login.models.AuthTokenResponse

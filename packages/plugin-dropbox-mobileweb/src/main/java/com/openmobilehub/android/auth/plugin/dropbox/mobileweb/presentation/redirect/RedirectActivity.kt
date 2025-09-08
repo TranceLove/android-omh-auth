@@ -19,9 +19,9 @@ package com.openmobilehub.android.auth.plugin.dropbox.mobileweb.presentation.red
 import android.content.Intent
 import android.net.Uri
 import androidx.activity.viewModels
-import com.openmobilehub.android.auth.plugin.common.mobileweb.presentation.redirect.RedirectViewModel
+import com.openmobilehub.android.auth.core.common.mobileweb.presentation.redirect.RedirectViewModel
 import com.openmobilehub.android.auth.plugin.dropbox.mobileweb.factories.ViewModelFactory
-import com.openmobilehub.android.auth.plugin.common.mobileweb.presentation.redirect.RedirectActivity
+import com.openmobilehub.android.auth.core.common.mobileweb.presentation.redirect.RedirectActivity
 
 class RedirectActivity : RedirectActivity() {
 

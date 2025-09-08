@@ -22,8 +22,8 @@ import android.net.Uri
 import android.util.Base64
 import androidx.core.content.edit
 import androidx.core.net.toUri
-import com.openmobilehub.android.auth.plugin.common.mobileweb.data.login.datasource.AuthDataSource
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.models.ApiResult
+import com.openmobilehub.android.auth.core.common.mobileweb.data.login.datasource.AuthDataSource
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.models.ApiResult
 import com.openmobilehub.android.auth.plugin.microsoft.mobileweb.BuildConfig
 import com.openmobilehub.android.auth.plugin.microsoft.mobileweb.R
 import com.openmobilehub.android.auth.plugin.microsoft.mobileweb.data.login.MicrosoftAuthRest

@@ -25,11 +25,11 @@ import com.openmobilehub.android.auth.core.models.OmhAuthException
 import com.openmobilehub.android.auth.core.models.OmhUserProfile
 import com.openmobilehub.android.auth.plugin.google.nongms.data.login.AuthRepositoryImpl
 import com.openmobilehub.android.auth.plugin.google.nongms.data.user.UserRepositoryImpl
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.auth.AuthUseCase
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.models.ApiResult
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.user.ProfileUseCase
-import com.openmobilehub.android.auth.plugin.common.mobileweb.presentation.redirect.RedirectActivity.Companion.CLIENT_ID
-import com.openmobilehub.android.auth.plugin.common.mobileweb.presentation.redirect.RedirectActivity.Companion.SCOPES
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.auth.AuthUseCase
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.models.ApiResult
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.user.ProfileUseCase
+import com.openmobilehub.android.auth.core.common.mobileweb.presentation.redirect.RedirectActivity.Companion.CLIENT_ID
+import com.openmobilehub.android.auth.core.common.mobileweb.presentation.redirect.RedirectActivity.Companion.SCOPES
 import com.openmobilehub.android.auth.plugin.google.nongms.presentation.redirect.RedirectActivity
 
 /**

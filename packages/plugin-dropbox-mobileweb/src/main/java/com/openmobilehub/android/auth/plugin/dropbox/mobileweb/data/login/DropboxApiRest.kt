@@ -1,7 +1,7 @@
 package com.openmobilehub.android.auth.plugin.dropbox.mobileweb.data.login
 
 
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.models.ApiResult
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.models.ApiResult
 import retrofit2.http.Header
 import retrofit2.http.POST
 

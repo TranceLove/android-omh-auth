@@ -23,8 +23,8 @@ import androidx.core.net.toUri
 import com.openmobilehub.android.auth.plugin.google.nongms.data.login.GoogleAuthREST
 import com.openmobilehub.android.auth.plugin.google.nongms.data.login.models.AuthTokenResponse
 import com.openmobilehub.android.auth.plugin.google.nongms.utils.Constants
-import com.openmobilehub.android.auth.plugin.common.mobileweb.data.login.datasource.AuthDataSource
-import com.openmobilehub.android.auth.plugin.common.mobileweb.domain.models.ApiResult
+import com.openmobilehub.android.auth.core.common.mobileweb.data.login.datasource.AuthDataSource
+import com.openmobilehub.android.auth.core.common.mobileweb.domain.models.ApiResult
 
 internal class GoogleAuthDataSource(
     private val authService: GoogleAuthREST,
