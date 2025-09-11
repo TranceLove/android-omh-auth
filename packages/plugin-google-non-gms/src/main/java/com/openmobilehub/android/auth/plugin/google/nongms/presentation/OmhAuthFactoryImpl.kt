@@ -27,11 +27,10 @@ import com.openmobilehub.android.auth.core.common.mobileweb.domain.auth.AuthUseC
 import com.openmobilehub.android.auth.core.common.mobileweb.presentation.MobileWebCredentials
 
 @Keep
-internal object OmhAuthFactoryImpl : OmhAuthFactory {
+object OmhAuthFactoryImpl : OmhAuthFactory {
 
     /**
      * Creates an auth client for the user of the non GMS type and returns it as the abstraction.
-     * This should be used by the core plugin only.
      */
     override fun getAuthClient(
         context: Context,
