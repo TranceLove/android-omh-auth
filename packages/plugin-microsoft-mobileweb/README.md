@@ -1,6 +1,6 @@
 # Module plugin-microsoft-mobileweb
 
-Microsoft Implementation of OMH Authentication API using Chrome webview.
+Microsoft Implementation of OMH Authentication API using AndroidX Browser CustomTab.
 
 ## Set up your Azure application
 

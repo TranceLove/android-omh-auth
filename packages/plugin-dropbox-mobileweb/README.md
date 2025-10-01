@@ -1,6 +1,6 @@
 # Module plugin-dropbox-mobileweb
 
-Dropbox Implementation of OMH Authentication API using Chrome webview.
+Dropbox Implementation of OMH Authentication API using AndroidX Browser CustomTab.
 
 ## Set up your Dropbox application
 

@@ -1,6 +1,6 @@
 # Module plugin-box-mobileweb
 
-Box.com Implementation of OMH Authentication API using Chrome webview.
+Box.com Implementation of OMH Authentication API using AndroidX Browser CustomTab.
 
 ## Quirks
 
