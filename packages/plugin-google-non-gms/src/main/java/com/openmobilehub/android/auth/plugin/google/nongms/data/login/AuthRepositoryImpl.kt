@@ -124,6 +124,7 @@ internal class AuthRepositoryImpl(
                         Constants.PROVIDER_GOOGLE
                     )
                 val googleAuthDataSource: AuthDataSource<AuthTokenResponse> = GoogleAuthDataSource(
+                    context = context,
                     authService = authService,
                     sharedPreferences = sharedPreferences
                 )

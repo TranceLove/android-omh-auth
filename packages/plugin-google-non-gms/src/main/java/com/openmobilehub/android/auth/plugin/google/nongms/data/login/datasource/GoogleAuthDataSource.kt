@@ -16,6 +16,7 @@
 
 package com.openmobilehub.android.auth.plugin.google.nongms.data.login.datasource
 
+import android.content.Context
 import android.content.SharedPreferences
 import android.net.Uri
 import androidx.core.content.edit
@@ -25,8 +26,10 @@ import com.openmobilehub.android.auth.plugin.google.nongms.data.login.models.Aut
 import com.openmobilehub.android.auth.plugin.google.nongms.utils.Constants
 import com.openmobilehub.android.auth.core.common.mobileweb.data.login.datasource.AuthDataSource
 import com.openmobilehub.android.auth.core.common.mobileweb.domain.models.ApiResult
+import com.openmobilehub.android.auth.plugin.google.nongms.R
 
 internal class GoogleAuthDataSource(
+    private val context: Context,
     private val authService: GoogleAuthREST,
     private val sharedPreferences: SharedPreferences
 ) : AuthDataSource<AuthTokenResponse> {
@@ -64,7 +67,7 @@ internal class GoogleAuthDataSource(
         return AUTH_URI.toUri().buildUpon()
             .appendQueryParameter(Constants.PARAM_SCOPE, scopes)
             .appendQueryParameter(Constants.PARAM_RESPONSE_TYPE, CODE_VALUE)
-            .appendQueryParameter(Constants.PARAM_REDIRECT_URI, redirectUri)
+            .appendQueryParameter(Constants.PARAM_REDIRECT_URI, formatRedirectUri(context))
             .appendQueryParameter(Constants.PARAM_CLIENT_ID, clientId)
             .appendQueryParameter(Constants.PARAM_CHALLENGE_METHOD, Constants.SHA256)
             .appendQueryParameter(Constants.PARAM_CODE_CHALLENGE, codeChallenge)
@@ -100,8 +103,27 @@ internal class GoogleAuthDataSource(
         sharedPreferences.edit(action = SharedPreferences.Editor::clear)
     }
 
+    override fun formatRedirectUriFrom(packageName: String): String {
+        return formatRedirectUri(context)
+    }
+
     companion object {
         private const val AUTH_URI = "https://accounts.google.com/o/oauth2/auth"
         private const val CODE_VALUE = "code"
+
+        @JvmStatic
+        fun formatRedirectUri(context: Context): String {
+            val scheme = context.getString(
+                R.string.com_openmobilehub_android_auth_google_oauth2_redirect_scheme
+            )
+            val host = context.getString(
+                R.string.com_openmobilehub_android_auth_google_oauth2_redirect_host
+            )
+            val pathPrefix = context.getString(
+                R.string.com_openmobilehub_android_auth_google_oauth2_redirect_pathPrefix
+            )
+            System.err.println("$scheme://$host$pathPrefix")
+            return "$scheme://$host$pathPrefix"
+        }
     }
 }

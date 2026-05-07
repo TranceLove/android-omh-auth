@@ -16,6 +16,7 @@
 
 package com.openmobilehub.android.auth.plugin.google.nongms.presentation.redirect
 
+import android.content.Intent
 import androidx.activity.viewModels
 import com.openmobilehub.android.auth.core.common.mobileweb.presentation.redirect.RedirectActivity
 import com.openmobilehub.android.auth.core.common.mobileweb.presentation.redirect.RedirectViewModel
@@ -24,4 +25,17 @@ import com.openmobilehub.android.auth.plugin.google.nongms.factories.ViewModelFa
 internal class RedirectActivity : RedirectActivity() {
 
     override val viewModel: RedirectViewModel by viewModels { ViewModelFactory() }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        caughtRedirect = true
+        val data = intent?.data
+        val authCode = data?.getQueryParameter("code")
+        val error = data?.getQueryParameter("error")
+        if (authCode == null) {
+            handleLoginError(error)
+            return
+        }
+        viewModel.requestTokens(authCode, packageName, clientId)
+    }
 }
