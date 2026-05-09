@@ -104,6 +104,13 @@ internal class AuthRepositoryImpl(
         return@withContext googleAuthDataSource.revokeToken(accessToken)
     }
 
+    /**
+     * Google oauth provider depends on client ID for custom URI callback to work.
+     */
+    override fun formatRedirectUriFrom(packageName: String, clientId: String?): String {
+        return googleAuthDataSource.formatRedirectUriFrom(requireNotNull(clientId))
+    }
+
     override fun clearData() {
         googleAuthDataSource.clearData()
     }
@@ -124,7 +131,6 @@ internal class AuthRepositoryImpl(
                         Constants.PROVIDER_GOOGLE
                     )
                 val googleAuthDataSource: AuthDataSource<AuthTokenResponse> = GoogleAuthDataSource(
-                    context = context,
                     authService = authService,
                     sharedPreferences = sharedPreferences
                 )

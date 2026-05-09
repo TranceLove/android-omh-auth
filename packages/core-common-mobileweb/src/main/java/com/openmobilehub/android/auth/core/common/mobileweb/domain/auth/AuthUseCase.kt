@@ -32,7 +32,7 @@ class AuthUseCase(
             scopes = scopes,
             clientId = clientId,
             codeChallenge = pkce.generateCodeChallenge(),
-            redirectUri = authRepository.formatRedirectUriFrom(packageName)
+            redirectUri = authRepository.formatRedirectUriFrom(packageName, clientId)
         )
     }
 
@@ -44,7 +44,7 @@ class AuthUseCase(
         return authRepository.requestTokens(
             clientId = clientId,
             authCode = authCode,
-            redirectUri = authRepository.formatRedirectUriFrom(packageName),
+            redirectUri = authRepository.formatRedirectUriFrom(packageName, clientId),
             codeVerifier = pkce.codeVerifier
         )
     }

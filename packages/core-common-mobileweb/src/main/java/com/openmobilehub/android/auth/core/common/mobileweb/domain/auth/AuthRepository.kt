@@ -91,12 +91,13 @@ interface AuthRepository {
      * behaviour.
      *
      * @param packageName app package name
+     * @param clientId auth provider client ID. Optional - depends on provider requirement
      *
      * @return redirect URI. Default is ${packageName}:/oauth2redirect
      *
      * @see [REDIRECT_FORMAT]
      */
-    fun formatRedirectUriFrom(packageName: String): String {
+    fun formatRedirectUriFrom(packageName: String, clientId: String? = null): String {
         return REDIRECT_FORMAT.format(packageName)
     }
 }

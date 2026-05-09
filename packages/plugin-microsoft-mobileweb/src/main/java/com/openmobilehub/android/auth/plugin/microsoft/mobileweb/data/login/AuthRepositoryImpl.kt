@@ -35,7 +35,6 @@ import kotlinx.coroutines.withContext
 internal class AuthRepositoryImpl(
     private val authDataSource: AuthDataSource<AuthTokenResponse>,
     private val ioDispatcher: CoroutineDispatcher,
-    private val context: Context,
 ) : AuthRepository {
 
     override suspend fun requestTokens(
@@ -109,7 +108,7 @@ internal class AuthRepositoryImpl(
         authDataSource.clearData()
     }
 
-    override fun formatRedirectUriFrom(packageName: String): String {
+    override fun formatRedirectUriFrom(packageName: String, clientId: String?): String {
         return authDataSource.formatRedirectUriFrom(packageName)
     }
 
@@ -132,7 +131,7 @@ internal class AuthRepositoryImpl(
                     authService = authService,
                     sharedPreferences = sharedPreferences,
                 )
-                authRepository = AuthRepositoryImpl(authDataSource, ioDispatcher, context)
+                authRepository = AuthRepositoryImpl(authDataSource, ioDispatcher)
             }
 
             return authRepository!!

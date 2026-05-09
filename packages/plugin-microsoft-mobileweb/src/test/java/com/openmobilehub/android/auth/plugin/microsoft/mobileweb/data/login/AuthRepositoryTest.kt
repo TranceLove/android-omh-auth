@@ -21,6 +21,7 @@ import com.openmobilehub.android.auth.core.common.mobileweb.data.login.datasourc
 import com.openmobilehub.android.auth.core.common.mobileweb.domain.auth.AuthRepository
 import com.openmobilehub.android.auth.core.common.mobileweb.domain.models.ApiResult
 import com.openmobilehub.android.auth.core.common.mobileweb.domain.models.OAuthTokens
+import com.openmobilehub.android.auth.plugin.microsoft.mobileweb.data.login.datasource.MicrosoftAuthDataSource
 import com.openmobilehub.android.auth.plugin.microsoft.mobileweb.data.login.models.AuthTokenResponse
 
 import io.mockk.coEvery
@@ -38,8 +39,9 @@ import org.junit.Test
 @OptIn(ExperimentalCoroutinesApi::class)
 internal class AuthRepositoryTest {
 
-    private val microsoftAuthDataSource = mockk<AuthDataSource<AuthTokenResponse>>() {
+    private val microsoftAuthDataSource = mockk<MicrosoftAuthDataSource>() {
         every { storeToken(any(), any()) } returns Unit
+            every { formatRedirectUriFrom(any()) } answers { callOriginal() }
     }
 
     @Test
@@ -96,7 +98,7 @@ internal class AuthRepositoryTest {
 
     private fun TestScope.createAuthRepository(): AuthRepository {
         val ioDispatcher = UnconfinedTestDispatcher(testScheduler)
-        return AuthRepositoryImpl(microsoftAuthDataSource, ioDispatcher, mockk())
+        return AuthRepositoryImpl(microsoftAuthDataSource, ioDispatcher)
     }
 
     @Test

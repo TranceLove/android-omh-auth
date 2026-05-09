@@ -27,13 +27,9 @@
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:host="@string/com.openmobilehub.android.auth.google.oauth2.redirect.host"
-                      android:pathPrefix="@string/com.openmobilehub.android.auth.google.oauth2.redirect.pathPrefix"
-                      android:scheme="@string/com.openmobilehub.android.auth.google.oauth2.redirect.scheme" />
+                <data android:scheme="${googleClientIdForRedirect}"/>
             </intent-filter>
         </activity>
     </application>

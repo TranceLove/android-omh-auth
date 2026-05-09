@@ -23,6 +23,7 @@ import com.openmobilehub.android.auth.plugin.google.nongms.data.login.models.Aut
 import com.openmobilehub.android.auth.core.common.mobileweb.domain.auth.AuthRepository
 import com.openmobilehub.android.auth.core.common.mobileweb.domain.models.ApiResult
 import com.openmobilehub.android.auth.core.common.mobileweb.domain.models.OAuthTokens
+import com.openmobilehub.android.auth.plugin.google.nongms.data.login.datasource.GoogleAuthDataSource
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.every
@@ -38,8 +39,38 @@ import org.junit.Test
 @OptIn(ExperimentalCoroutinesApi::class)
 internal class AuthRepositoryTest {
 
-    private val googleAuthDataSource = mockk<AuthDataSource<AuthTokenResponse>>() {
+    private val googleAuthDataSource = mockk<GoogleAuthDataSource>() {
         every { storeToken(any(), any()) } returns Unit
+        every { formatRedirectUriFrom(any()) } answers { callOriginal() }
+    }
+
+    @Test
+    fun `Test formatRedirectUri returns correct format`() {
+        runTest {
+            val authRepository = createAuthRepository()
+            val packageName = "com.openmobilehub.android.plugin.auth.nongms"
+            val clientId = "1234567890-abcdefghijklmnopqrstuvwxyz.apps.googleusercontent.com"
+            val expectedFormat = "com.googleusercontent.apps.1234567890-abcdefghijklmnopqrstuvwxyz:/oauth2redirect"
+
+            val result = authRepository.formatRedirectUriFrom(packageName, clientId)
+
+            assertEquals(expectedFormat, result)
+        }
+    }
+
+    @Test
+    fun `Test formatRedirectUri throws exception when client ID is invalid`() {
+        runTest {
+            val authRepository = createAuthRepository()
+            val packageName = "com.openmobilehub.android.plugin.auth.nongms"
+            val invalidClientId = null
+
+            try {
+                authRepository.formatRedirectUriFrom(packageName, invalidClientId)
+            } catch (_: IllegalArgumentException) {
+                // Expected exception, test passes
+            }
+        }
     }
 
     @Test

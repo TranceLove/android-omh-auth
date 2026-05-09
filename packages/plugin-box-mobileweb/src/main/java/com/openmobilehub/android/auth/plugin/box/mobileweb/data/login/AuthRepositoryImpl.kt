@@ -108,7 +108,7 @@ internal class AuthRepositoryImpl(
         boxAuthDataSource.clearData()
     }
 
-    override fun formatRedirectUriFrom(packageName: String): String {
+    override fun formatRedirectUriFrom(packageName: String, clientId: String?): String {
         return BoxAuthDataSource.formatRedirectUri(context)
     }
 

@@ -19,6 +19,7 @@ android {
             name = "G_AUTH_URL",
             value = getPropertyOrFail("googleAuthUrl")
         )
+        manifestPlaceholders["googleClientIdForRedirect"] = "placeholder.not.use"
     }
 }
 

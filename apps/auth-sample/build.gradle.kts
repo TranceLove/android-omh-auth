@@ -55,6 +55,12 @@ android {
         """.trimIndent()
 
         file("./src/main/res/raw/ms_auth_config.json").writeText(configJson)
+
+        val googleClientId = getValueFromProperties("GOOGLE_CLIENT_ID")
+        manifestPlaceholders["googleClientIdForRedirect"] = googleClientId.let {
+            val bareId = it.replace(".apps.googleusercontent.com", "")
+            "com.googleusercontent.apps.${bareId}"
+        }
     }
 
     signingConfigs {

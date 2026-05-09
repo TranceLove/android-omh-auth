@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
-    <string name="com.openmobilehub.android.auth.box.oauth2.redirect.scheme" translatable="false">omh</string>
-    <string name="com.openmobilehub.android.auth.box.oauth2.redirect.host" translatable="false">auth.oauth2.box</string>
-    <string name="com.openmobilehub.android.auth.box.oauth2.redirect.pathPrefix" translatable="false">/redirect</string>    
+    <string name="com.openmobilehub.android.auth.box.oauth2.redirect.scheme" translatable="false">https</string>
+    <string name="com.openmobilehub.android.auth.box.oauth2.redirect.host" translatable="false">auth.openmobilehub.org</string>
+    <string name="com.openmobilehub.android.auth.box.oauth2.redirect.pathPrefix" translatable="false">/box/oauth2/redirect</string>
 </resources>

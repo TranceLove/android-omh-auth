@@ -31,7 +31,9 @@ import org.junit.Test
 
 internal class AuthUseCaseTest {
 
-    private val authRepository: AuthRepository = mockk()
+    private val authRepository: AuthRepository = mockk() {
+        every { formatRedirectUriFrom(any(), any()) } answers { callOriginal() }
+    }
     private val pkce: Pkce = mockk {
         every { codeVerifier } returns "codeverifier"
         every { generateCodeChallenge() } returns "codechallenge"

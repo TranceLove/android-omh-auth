@@ -116,7 +116,7 @@ internal class AuthRepositoryImpl(
         authDataSource.clearData()
     }
 
-    override fun formatRedirectUriFrom(packageName: String): String {
+    override fun formatRedirectUriFrom(packageName: String, clientId: String?): String {
         return authDataSource.formatRedirectUriFrom(packageName)
     }
 
